@@ -328,7 +328,7 @@ class Game1
     }
   }
 
-
+// move player / randomize player movement according to the enemies movement
   private void updateFood()
   {
     for (int i = 0; i < food.length-1; i++)
@@ -385,10 +385,7 @@ class Game1
   }
 
 
-
-
-
-
+// populate board with enemies (create more enemies)
   private void populateBoard()
   {
     //Insert players
@@ -406,6 +403,7 @@ class Game1
     }
   }
 
+// check if theirs collision between the player and enemies
   private void checkForCollisions()
   {
     //Check enemy collisions
@@ -419,6 +417,7 @@ class Game1
     }
   }
 
+// check if theirs collision between the player and enemies
   private void checkForCollisions1()
   {
     //Check enemy collisions
@@ -431,7 +430,8 @@ class Game1
       }
     }
   }
-
+  
+  // player 1 receives more health points
   private void GettingHP()
   {
     for (int i = 0; i < food.length-1; i++)
@@ -448,6 +448,7 @@ class Game1
     }
   }
 
+// player 2 receives more health points
   private void GettingHP1()
   {
     for (int i = 0; i < food.length-1; i++)
@@ -464,6 +465,7 @@ class Game1
     }
   }
 
+// if your health goes down then the last player with no health left loses the game
   private void Losegame() 
   {
     if (playerLife <= 0)
@@ -482,7 +484,8 @@ class Game1
     }
   }
 
-  private void CreateFood(int amountOfFood) {        //Randomizing food placement
+// places the food on random grid positions throughout the game
+  private void CreateFood(int amountOfFood) {
     for (int i = 0; i < amountOfFood; i++)
     {
       int rnd1 = rnd.nextInt(24);
@@ -491,6 +494,7 @@ class Game1
     }
   }
 
+// removes food from grid if it collides witd player
   private void removeFood(Dot foodToRemove)
   {
     for (int i = 0; i < food.length-1; i++)
